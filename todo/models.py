@@ -10,11 +10,14 @@ class Todo(BaseModel):
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=50, verbose_name="タイトル")
-    description = models.CharField(max_length=300,blank=True, null=True, verbose_name="詳細")
+    description = models.CharField(
+        max_length=300, blank=True, null=True, verbose_name="詳細"
+    )
     registration_date = models.DateField(blank=True, null=True, verbose_name="登録日")
     expire_date = models.DateField(blank=True, null=True, verbose_name="期限日")
     finished_date = models.DateField(blank=True, null=True, verbose_name="終了日")
     is_completed = models.BooleanField(default=False, verbose_name="達成フラグ")
+    tags = models.ManyToManyField("Tag")
 
     def __str__(self):
         return self.title
@@ -38,3 +41,11 @@ class Todo(BaseModel):
         """タスクを削除する代わりに、is_deleted フラグをTrueにする"""
         self.is_deleted = True
         self.save()
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=50)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
