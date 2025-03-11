@@ -11,12 +11,13 @@ class TodoForm(forms.ModelForm):
 
     class Meta:
         model = Todo
-        fields = ("title", "expire_date", "finished_date", "description")
+        fields = ("title", "expire_date", "finished_date", "description","tags")
         # フィールドのラベル
         labels = {
             "title": "タイトル",
             "expire_date": "期限日",
             "description": "詳細",
+            "tags":"タグ",
         }
         # エラーメーセージ
         error_messages = {
