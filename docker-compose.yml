@@ -2,7 +2,7 @@
   # Djangoアプリケーション用のサービス
   web:
     build: .
-    container_name: django_user_app
+    container_name: django_todo_app
     command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
@@ -14,7 +14,7 @@
   # PostgreSQLデータベース用のサービス
   db:
     image: postgres:15
-    container_name: django_user_postgres_db
+    container_name: django_todo_postgres_db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres

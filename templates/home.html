@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}ユーザー管理サイト | {{ APP_TITLE }}{% endblock %}
+{% block title %}TodoListサイト | {{ APP_TITLE }}{% endblock %}
 
 {% block content %}
 <div class="container py-5">
     <!-- ヘッダー部分 -->
     <div class="text-center mb-5">
         <img src="media/default/showcase.svg" alt="Showcase Image" class="img-fluid" width="250">
-        <h1 class="fw-bold mt-3">ユーザー管理サイト</h1>
-        <p class="text-muted">シンプルで直感的なユーザー管理を提供します。</p>
+        <h1 class="fw-bold mt-3">TodoListサイト</h1>
+        <p class="text-muted">シンプルで直感なタスク管理を提供します。</p>
     </div>
     {% if user.is_authenticated %}
     <div class="row justify-content-center">
@@ -17,7 +17,7 @@
                 <div class="card-body text-center py-4">
                     <!-- ユーザー名を表示 -->
                     <h3 class="mb-3 text-primary fw-bold">ようこそ!</h3>
-                    <h4 class="mb-3 text-dark">ユーザー管理サイトへ!</h4>
+                    <h4 class="mb-3 text-dark">TodoListサイトへ!</h4>
                     <p class="fs-5 text-secondary"><strong class="text-dark">{{ user.name }} さん!</strong></p>
                 </div>
             </div>
