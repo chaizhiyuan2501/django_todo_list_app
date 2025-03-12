@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_bootstrap5",
     "user",
-    "todo",
+    # "todo",
 ]
 
 MIDDLEWARE = [
@@ -164,7 +164,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "user.User"
 
 # APPのタイトルを指定する
-APP_TITLE = "ユーザー管理システム"
+APP_TITLE = "Todoリスト"
 
 # LOGIN_URL = '/user/login'
 # LOGIN_REDIRECT_URL = '/user/user'   # ログイン後ホームページに遷移する

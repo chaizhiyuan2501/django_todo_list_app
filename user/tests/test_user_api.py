@@ -65,7 +65,7 @@ class PublicUserApiTests(TestCase):
             form="form",
             field="email",
             errors=[
-                "この メールアドレス を持った ユーザー が既に存在します。",
+                "このメールアドレスはすでに登録されています。",
             ],
         )
         # 作成したユーザーのメールアドレスの数は1つだけ
